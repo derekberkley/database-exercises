@@ -1,6 +1,6 @@
 -- TODO: At the top of albums_seeder.sql be sure to USE the codeup_test_db database.
 USE codeup_test_db;
-
+TRUNCATE albums;
 -- TODO: Use INSERT to add records for all the albums from this list on Wikipedia that claim over 30 million sales
 --  (the first two tables). For sales data, use the 'sales certification' column of the tables, not 'claimed sales'.
 --  For artists listed with 'Various Artists', just use the primary artist's name.

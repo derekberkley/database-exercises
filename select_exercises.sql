@@ -1,37 +1,35 @@
 use codeup_test_db;
 
--- TODO: Write SELECT statements to output each of the following with a caption:
---  TODO: All albums in your tables
-        select album_name from albums;
+# TODO: In select_exercises.sql write queries to find the following information.
+#  Before each item, output a caption explaining the results:
 
---  TODO: All albums released before 1980
-        SELECT album_name from albums
-        WHERE release_date < '1980&';
+# TODO: The name of all albums by Pink Floyd.
+SELECT album_name as " These are Pink Floyd Albums"
+FROM albums
+WHERE artist = 'Pink Floyd';
 
---  TODO: All albums by Michael Jackson
-        SELECT album_name from albums
-        WHERE artist LIKE 'Michael Jackson';
+# TODO: The year Sgt. Pepper's Lonely Hearts Club Band was released
+SELECT release_date as "The year Sgt. Pepper's Lonely Hearts Club was released"
+FROM albums
+Where album_name =  'Sgt. Pepper\'s Lonely Hearts Club Band';
 
-# TODO: After each SELECT add an UPDATE statement to:
-#  Make all the albums 10 times more popular (sales * 10)
+# TODO: The genre for Nevermind
+SELECT genre as "The genre for Nevermind"
+FROM albums
+Where album_name = 'Nevermind';
 
-   UPDATE albums
-       SET sales = sales * 10;
+# TODO: Which albums were released in the 1990s
+SELECT album_name as "1990's albums"
+FROM albums
+WHERE release_date LIKE '189%';
 
-    select album_name, sales
-    FROM albums;
+# TODO: Which albums had less than 20 million certified sales
+SELECT album_name as "Less than 20 million certified sales"
+FROM albums
+Where sales < 2000000;
 
-# TODO: Move all the albums before 1980 back to the 1800s.
-    UPDATE albums
-        SET release_date = release_date - 100;
-
-    SELECT album_name, release_date
-    from albums;
-
-# TODO: Change 'Michael Jackson' to 'Peter Jackson'
-    UPDATE albums
-    SET artist = 'Peter Jackson'
-    WHERE artist = 'Michael Jackson';
-
-    SELECT album_name, artist
-    from albums;
+# TODO: All the albums with a genre of "Rock". Why do these query results not include albums with a genre of "Hard rock" or "Progressive rock"?
+SELECT album_name as "Rock Albums"
+from albums
+Where genre = 'Rock';
+# does not include other genres because the query is searching for a specific string with no % to allow for fringe selections
